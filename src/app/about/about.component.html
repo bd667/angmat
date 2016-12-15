@@ -4,38 +4,34 @@
 <!--{{ obj.date }}-->
 
 <form [formGroup]="formQuestion" (ngSubmit)="onSubmit()">
-    <div formGroupName="name">
-
-
-
-
-        <md-card class="demo-card demo-basic">
-            <md-toolbar color="primary">Divider Colors</md-toolbar>
-            <md-card-content dividerColor="primary">
-                <h4>Input</h4>
-
-                <md-input dividerColor="primary" placeholder="Default Color" formControlName="first" style="width: 100%"></md-input>
-            </md-card-content>
-
-        </md-card>
-
-
-        <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input"  type="text" id="sample1">
-            <label class="mdl-textfield__label" for="sample1">First...</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" formControlName="last" type="text" id="sample2">
-            <label class="mdl-textfield__label" for="sample2">Last...</label>
-        </div>-->
+    <!--<div formGroupName="name">-->
+        <!---->
+    <!--</div>-->
+    <div>
+        <md-input dividerColor="primary" placeholder="todoTest" formControlName="todoTest"
+                  style="width: 100%"></md-input>
+        <md-input dividerColor="primary" placeholder="name" formControlName="name"
+                  style="width: 100%"></md-input>
+        <md-input dividerColor="primary" placeholder="dateTodo" formControlName="dateTodo"
+                  style="width: 100%"></md-input>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" formControlName="email" type="text" id="sample3">
-        <label class="mdl-textfield__label" for="sample3">Email...</label>
-    </div>
+
     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      <i class="material-icons">input</i>
+        <i class="material-icons">input</i>
     </button>
 </form>
 <p>Value: {{ formQuestion.value | json }}</p>
 <p>Validation status: {{ formQuestion.status }}</p>
+
+
+<div>
+    <div *ngFor="let item of items">
+        <md-card class="demo-card demo-basic">
+            <md-toolbar color="primary">{{item.todoTest}}</md-toolbar>
+            <md-card-content dividerColor="primary">
+                <div>{{item.name}}</div>
+                <div>{{item.dateTodo}}</div>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>
